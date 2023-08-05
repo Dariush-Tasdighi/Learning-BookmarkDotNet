@@ -9,12 +9,12 @@ public class DateParserBenchmarks : object
 	/// <summary>
 	/// Main Step (4)
 	/// </summary>
-	private const string DateTimeArgument = "2023-11-12T20:12:13Z";
+	private static readonly DateParser dateParser = new();
 
 	/// <summary>
 	/// Main Step (5)
 	/// </summary>
-	private static readonly DateParser dateParser = new DateParser();
+	private const string DateTimeArgument = "2023-11-12T20:12:13Z";
 
 	public DateParserBenchmarks() : base()
 	{
@@ -42,10 +42,12 @@ public class DateParserBenchmarks : object
 //[BenchmarkDotNet.Attributes.MemoryDiagnoser]
 //[BenchmarkDotNet.Attributes.Orderer
 //	(summaryOrderPolicy: BenchmarkDotNet.Order.SummaryOrderPolicy.FastestToSlowest)]
+////[BenchmarkDotNet.Attributes.Orderer
+////	(summaryOrderPolicy: BenchmarkDotNet.Order.SummaryOrderPolicy.SlowestToFastest)]
 //public class DateParserBenchmarks : object
 //{
+//	private static readonly DateParser dateParser = new();
 //	private const string DateTimeArgument = "2023-11-12T20:12:13Z";
-//	private static readonly DateParser dateParser = new DateParser();
 
 //	public DateParserBenchmarks() : base()
 //	{
@@ -72,8 +74,8 @@ public class DateParserBenchmarks : object
 //	(summaryOrderPolicy: BenchmarkDotNet.Order.SummaryOrderPolicy.FastestToSlowest)]
 //public class DateParserBenchmarks : object
 //{
+//	private static readonly DateParser dateParser = new();
 //	private const string DateTimeArgument = "2023-11-12T20:12:13Z";
-//	private static readonly DateParser dateParser = new DateParser();
 
 //	public DateParserBenchmarks() : base()
 //	{
@@ -82,6 +84,7 @@ public class DateParserBenchmarks : object
 //	/// <summary>
 //	/// Step (11) -> Add new Column: Ratio
 //	/// </summary>
+//	//[BenchmarkDotNet.Attributes.Benchmark]
 //	[BenchmarkDotNet.Attributes.Benchmark(Baseline = true)]
 //	public void GetYearFromDateTime()
 //	{
@@ -113,8 +116,8 @@ public class DateParserBenchmarks : object
 //	(summaryOrderPolicy: BenchmarkDotNet.Order.SummaryOrderPolicy.FastestToSlowest)]
 //public class DateParserBenchmarks : object
 //{
+//	private static readonly DateParser dateParser = new();
 //	private const string DateTimeArgument = "2023-11-12T20:12:13Z";
-//	private static readonly DateParser dateParser = new DateParser();
 
 //	public DateParserBenchmarks() : base()
 //	{

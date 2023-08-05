@@ -30,6 +30,8 @@ public class DateParser : object
 	/// </summary>
 	public int GetYearFromSplit(string dateTimeAsString)
 	{
+		// "2023-11-12T20:12:13Z" -> Split -> Array: { "2023" "11" "12T20:12:13Z" }
+
 		var splitOnHyphyn =
 			dateTimeAsString.Split(separator: '-');
 
@@ -40,7 +42,7 @@ public class DateParser : object
 	}
 
 	/// <summary>
-	/// Step (13, 1)
+	/// Step (13,1)
 	/// </summary>
 	public int GetYearFromSubstring(string dateTimeAsString)
 	{
@@ -57,7 +59,7 @@ public class DateParser : object
 	}
 
 	/// <summary>
-	/// Step (13, 2)
+	/// Step (13,2)
 	/// </summary>
 	public int GetYearFromSpan(System.ReadOnlySpan<char> dateTimeAsSpan)
 	{
@@ -75,7 +77,7 @@ public class DateParser : object
 	}
 
 	/// <summary>
-	/// Step (13, 3)
+	/// Step (13,3)
 	/// </summary>
 	public int GetYearFromSpanWithManualConversion(System.ReadOnlySpan<char> dateTimeAsSpan)
 	{

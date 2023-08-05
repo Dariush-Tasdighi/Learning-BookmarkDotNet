@@ -7,16 +7,16 @@ internal static class Program : object
 	}
 
 	/// <summary>
-	/// Main Step (7) - In Release Mode! Not in Debug Mode!
+	/// Main Step (7)
+	/// In Release Mode! Not in Debug Mode! -> CTRL + F5 (Not F5)
 	/// </summary>
 	private static void Main()
 	{
 		//BenchmarkDotNet.Running.BenchmarkRunner.Run<DateParserBenchmarks>();
 
-		//BenchmarkDotNet.Running.BenchmarkRunner
-		//	.Run(type: typeof(DateParserBenchmarks));
+		//BenchmarkDotNet.Running.BenchmarkRunner.Run(type: typeof(DateParserBenchmarks));
 
-		BenchmarkDotNet.Running.BenchmarkRunner.Run
-			(assembly: typeof(DateParserBenchmarks).Assembly);
+		BenchmarkDotNet.Running.BenchmarkRunner
+			.Run(assembly: typeof(Program).Assembly);
 	}
 }
